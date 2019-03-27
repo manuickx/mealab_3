@@ -49,11 +49,26 @@ end
     ingredient = Ingredient.create(name: ingredient["strIngredient"])
   end
 
+  def youtube_embed_link(view_link)
+    if view_link != ""
+      vid_url = view_link
+      vid_url_code = vid_url.split('v=')
+      vid_embed = "https://www.youtube.com/embed/"+vid_url_code[1]
+    end
+  end
+
   # get all meals
   allmeals.each do |meal|
     new_meal = Meal.new()
     new_meal.name = meal["strMeal"]
     new_meal.img_url = meal["strMealThumb"]
+    # new_meal.vid_url = meal["strYoutube"]
+    # if meal["strYoutube"] != ""
+    #   vid_url = meal["strYoutube"]
+    #   vid_url_code = vid_url.split('v=')
+    #   vid_embed = "https://www.youtube.com/embed/"+vid_url_code[1]
+    new_meal.vid_url = youtube_embed_link(meal["strYoutube"])
+    # end
     category1 = Category.find_by name: meal["strCategory"]
       new_meal.category_id = category1.id
       new_meal.save

@@ -1,7 +1,34 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Mealab</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/meals">Meals <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/ingredients">Ingredients</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a class="btn btn-outline-primary btn-sm" href="#" role="button" aria-pressed="true"> Sign In </a>
+      <a class="btn btn-outline-primary btn-sm" href="#" role="button" aria-pressed="true"> Sign Up </a>
+    </form>
+  </div>
+</nav>
+
 <h1><%= @ingredient.name %></h1>
-
-
 
 <%=image_tag image_url("https://www.themealdb.com/images/ingredients/#{@ingredient.name}.png")%>
 
-<%# add video url here %>
+
+<ul>
+<% @ingredient.meals.each do |meal| %>
+  <li>
+  <%= link_to meal.name, meal %>
+  </li>
+<% end %>
+</ul>
