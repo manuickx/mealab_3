@@ -1,3 +1,12 @@
 // Place all the styles related to the Meals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  justify-content: space-evenly;
+  text-align: center;
+  text-transform: uppercase;
+
+}

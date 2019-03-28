@@ -1,31 +1,16 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Mealab</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<head>
+  <link href="/assets/ingredients.scss" rel="stylesheet">
+</head>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/meals">Meals <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/ingredients">Ingredients</a>
-      </li>
-      <li>
-      <div class="nav-item active">
-        <%= form_tag(ingredients_path,method: :get) do %>
-          <%= text_field_tag :search, params[:search], placeholder: 'Ingredient' %>
-          <%= submit_tag 'Search', name: nil%>
-        <% end %>
-      </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <a class="btn btn-outline-primary btn-sm" href="#" role="button" aria-pressed="true"> Sign In </a>
-      <a class="btn btn-outline-primary btn-sm" href="#" role="button" aria-pressed="true"> Sign Up </a>
-    </form>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="nav-item active">
+    <%= form_tag(ingredients_path,method: :get) do %>
+      <%= text_field_tag :search, params[:search], placeholder: 'Ingredient' %>
+      <%= submit_tag 'Search', name: nil%>
+    <% end %>
   </div>
+
 </nav>
 
 <div class="grid-container">

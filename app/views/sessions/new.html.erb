@@ -1,0 +1,19 @@
+<head>
+  <link href="/assets/users.scss" rel="stylesheet">
+</head>
+
+<body>
+
+
+<%= form_tag sessions_path do %>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <%= text_field_tag :username, nil, placeholder: 'Username', class: "fadeIn first"%><br>
+      <%= password_field_tag :password, nil, placeholder: 'Password', class: "fadeIn second"%><br>
+      <%= submit_tag 'Login', class: "fadeIn third" %><br>
+      <a class="underlineHover" href="/signup">Not registered yet? Sign up here</a>
+    </div>
+  </div>
+<% end %>
+
+</body>

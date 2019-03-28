@@ -11,6 +11,50 @@
 
 <body>
 
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Mealab</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/meals">Meals <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/ingredients">Ingredients</a>
+        </li>
+        <% if logged_in? %>
+        <li>
+          <a class="nav-link" href="/recipes/new">Create Recipe</a>
+        </li>
+        <%end%>
+
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <%if !logged_in? %>
+          <a class="btn btn-outline-primary" href="/login" role="button" aria-pressed="true"> Sign In </a>
+          <a class="btn btn-outline-primary" href="/signup" role="button" aria-pressed="true"> Sign Up </a>
+        <%else%>
+          <!-- <a class="btn btn-light btn-primary disabled"> <%#= @user.first_name %> </a> -->
+          <a class="btn btn-outline-primary" <%= link_to 'logout', logout_path, method: "post" %> </a>
+        <%end%>
+      </form>
+
+    </div>
+  </nav>
+
+<div>
+  <% if flash[:errors] %>
+  <% flash[:errors].each do |e|  %>
+    <p style='color: red'> <%= e %></p>
+    <% end %>
+    <% end %>
+</div>
+
     <%= yield %>
   </body>
 </html>
