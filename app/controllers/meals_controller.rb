@@ -25,7 +25,13 @@ class MealsController < ApplicationController
   private
 
   def meals_params
-    params.require(:meal).permit(:name, :category_id, :img_url, :vid_url, :user_id, :search)
+    params.require(:meal).permit(:name, :category_id, :img_url, :vid_url, :user_id, :search, ingredient_attributes: [:name])
   end
+
+#   def cocktail_params
+#   params.require(:cocktail).permit(:name, :instructions, :alcoholic,
+#    cocktail_ingredients_attributes: [:quantity,
+#    ingredient_attributes: [:name]])
+# end
 
 end

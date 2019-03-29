@@ -1,1 +1,23 @@
-<h1><%= @user.first_name %>'s page</h1>
+
+<head>
+  <link href="/assets/usersshow.scss" rel="stylesheet">
+</head>
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="card">
+    <div class="box">
+        <div class="img">
+            <img src="/assets/food-post.jpg">
+        </div>
+        <h2><%= @user.first_name.downcase.capitalize%> <%= @user.last_name.downcase.capitalize%><br><span><%=@user.username%></span></h2>
+        <span>
+            <ul>
+                <li><a href=<%=edit_user_path%>><i class="btn btn-outline-primary" aria-hidden="true">Edit profile</i></a></li>
+            </ul>
+        </span>
+    </div>
+</div>

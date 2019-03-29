@@ -2,7 +2,7 @@
   <link href="/assets/users.scss" rel="stylesheet">
 </head>
 
-<%= form_for @user, :url => '/signup' do |f| %>
+<%= form_for @user do |f| %>
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <%= f.text_field :first_name, class: "fadeIn first", placeholder: "First Name" %><br>

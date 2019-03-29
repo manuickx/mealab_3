@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2019_03_28_095956) do
     t.datetime "updated_at", null: false
     t.string "img_url"
     t.string "vid_url"
-    t.integer "user_id"
     t.string "instructions"
     t.index ["category_id"], name: "index_meals_on_category_id"
   end

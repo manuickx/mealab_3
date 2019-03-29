@@ -12,6 +12,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def create
+  end
+
 private
 
   def recipe_params
